@@ -61,7 +61,7 @@ describe('DB Model Test', () => {
     async function addUser2(): Promise<User> {
       const user2 = new User({ name: 'someName2' });
       const result = await user2.save();
-      return resuolt;
+      return result;
     }
 
     async function getUsers(): Promise<User[]> {
