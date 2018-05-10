@@ -47,7 +47,9 @@ describe('DB Model Test', () => {
     }
 
     async function asyncSaveAndFindTest(): Promise<User[]> {
-      return await new User({ name: 'someName' }).save().then(res => User.findAll());
+      const user: User = new User({ name: 'someName' });
+      await user.save();
+      return User.findAll();
     }
 
     // async function addUser2(): Promise<User> {
@@ -57,7 +59,9 @@ describe('DB Model Test', () => {
     // }
 
     async function addUser2(): Promise<User> {
-      return await new User({ name: 'someName2' }).save();
+      const user2 = new User({ name: 'someName2' });
+      const result = await user2.save();
+      return resuolt;
     }
 
     async function getUsers(): Promise<User[]> {
